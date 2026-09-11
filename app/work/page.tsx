@@ -16,9 +16,14 @@ export default function WorkPage() {
           solve real-world problems.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {activeProjects.map((project) => (
-            <WorkCard key={project.title} project={project} />
+            <div
+              key={project.title}
+              className={project.featured ? "md:col-span-2" : ""}
+            >
+              <WorkCard project={project} />
+            </div>
           ))}
         </div>
 

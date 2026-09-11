@@ -2,9 +2,17 @@ export interface WorkProject {
   title: string;
   category: string;
   description: string;
+  /** Desktop screenshot, shown inside the browser frame. */
   image?: string;
+  /** Mobile screenshot, shown inside the phone frame. Falls back to `image`. */
+  mobileImage?: string;
   url: string;
   technologies: string[];
+  year?: string;
+  /** Footer label, e.g. "Live", "Open Source", "Under NDA". Defaults to "Live". */
+  status?: string;
+  /** Spans the full row of the grid with a taller preview stage. */
+  featured?: boolean;
   archived?: boolean;
 }
 
@@ -14,10 +22,11 @@ export const workProjects: WorkProject[] = [
     category: "Personal",
     description:
       "An AI powered health care system with features like appointment scheduling, patient record management, reminders, medical insights.",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+    image: "/work/nine-hertz-desktop.webp",
+    mobileImage: "/work/nine-hertz-mobile.webp",
     url: "https://medic.devalentine.com",
     technologies: ["react", "nestjs", "docker"],
+    featured: true,
   },
   {
     title: "Studio",
@@ -26,6 +35,7 @@ export const workProjects: WorkProject[] = [
       "A dedicated brand website meticulously crafted to showcase my premium client work, technical case studies, and professional services.",
     image:
       "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
+    mobileImage: "/work/studio-mobile.webp",
     url: "https://studio.devalentine.com",
     technologies: ["next.js", "react"],
   },
@@ -34,28 +44,30 @@ export const workProjects: WorkProject[] = [
     category: "Personal",
     description:
       "A powerful, interactive command-line wrapper for yt-dlp, making it incredibly easy to download media without memorizing complex flags.",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    image: "/work/lazydlp-desktop.webp",
+    mobileImage: "/work/lazydlp-mobile.webp",
     url: "https://github.com/devalentineomonya/lazydlp",
     technologies: ["react", "ink tui"],
+    status: "Open Source",
   },
   {
     title: "Journaling",
     category: "Personal",
     description:
       "A privacy-first personal finance app that parses M-Pesa SMS messages natively to log transactions, track budgets, and provide AI spending insights.",
-    image:
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=800&auto=format&fit=crop",
+    image: "/work/journaling-desktop.webp",
+    mobileImage: "/work/journaling-mobile.webp",
     url: "https://journauling.devalentine.com/",
     technologies: ["react native", "expo", "ai"],
+    featured: true,
   },
   {
     title: "University Computer Society",
     category: "Volunteer",
     description:
       "The official web platform for a university computer society, serving as a central hub for members, events, and tech community resources.",
-    image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop",
+    image: "/work/computer-society-desktop.webp",
+    mobileImage: "/work/computer-society-mobile.webp",
     url: "https://computersocietyofkirinyaga.org",
     technologies: ["next.js", "tailwind"],
   },
@@ -64,8 +76,8 @@ export const workProjects: WorkProject[] = [
     category: "Client",
     description:
       "A sleek, highly performant corporate website for Tekobliss, designed with a focus on modern branding and driving client conversions.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    image: "/work/tekobliss-desktop.webp",
+    mobileImage: "/work/tekobliss-mobile.webp",
     url: "https://tekobliss.com/",
     technologies: ["react", "branding"],
   },
@@ -74,8 +86,8 @@ export const workProjects: WorkProject[] = [
     category: "Client",
     description:
       "An interactive Performance-Based Questions (PBQ) Simulator engineered to help students prepare for complex, hands-on IT certification exams.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+    image: "/work/pbq-simulator-desktop.webp",
+    mobileImage: "/work/pbq-simulator-mobile.webp",
     url: "https://pbqsimulator.com/",
     technologies: ["react", "nestjs"],
   },
@@ -84,8 +96,8 @@ export const workProjects: WorkProject[] = [
     category: "Client",
     description:
       "A modern, accessible digital presence and school management portal for Arorwet Secondary School, streamlining information access.",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+    image: "/work/arorwet-desktop.webp",
+    mobileImage: "/work/arorwet-mobile.webp",
     url: "https://www.arorwetsecondary.sc.ke/",
     technologies: ["next.js", "cms"],
   },

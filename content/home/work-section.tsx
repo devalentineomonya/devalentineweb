@@ -7,12 +7,16 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 
 export const WorkSection = () => (
   <SectionLayout id="work" title="My Work.">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {workProjects
         .filter((p) => !p.archived)
         .slice(0, 3)
         .map((project, idx) => (
-          <FadeUp key={project.title} delay={0.1 * (idx + 1)}>
+          <FadeUp
+            key={project.title}
+            delay={0.1 * (idx + 1)}
+            className={project.featured ? "md:col-span-2" : ""}
+          >
             <WorkCard project={project} />
           </FadeUp>
         ))}
